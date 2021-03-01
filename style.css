@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  /* gradient-color */
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  /* text color */
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  /* neutral color */
+  /* text */
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  /* dividers */
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  /* fuente principal */
+  --fuente-principal: "Kumbh Sans", sans-serif;
+}
+
+/* reset de box-sizing */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px*/
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* estilos globales */
+body {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--fuente-principal);
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  max-width: 100%;
+}
+p {
+  margin: 0;
+}
+
+/* classes reutilizables */
+.display-centrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .text-lg-left {
+    text-align: left;
+  }
+}
+/* clases personalizadas */
+.container-box {
+  width: min(90%, 60rem);
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 10px 10px 50px 7px rgba(80, 37, 118, 1);
+  -webkit-box-shadow: 10px 10px 50px 7px rgba(80, 37, 118, 1);
+  -moz-box-shadow: 10px 10px 50px 7px rgba(80, 37, 118, 1);
+}
+
+@media (min-width: 992px) {
+  .container-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.contenedor-ilustracion {
+  width: 100%;
+}
+.illustration-woman {
+  background-image: url(images/illustration-woman-online-mobile.svg);
+  height: 15rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: -10rem;
+  margin-left: 3rem;
+}
+.illustration-sombra {
+  background-image: url(images/bg-pattern-mobile.svg);
+  height: 8rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -7rem;
+  margin-left: 5rem;
+}
+
+@media (min-width: 768px) {
+  .illustration-woman {
+    margin-left: 16rem;
+  }
+  .illustration-sombra {
+    margin-left: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .contenedor-ilustracion {
+    display: block;
+  }
+  .illustration-woman {
+    background-image: url(images/illustration-woman-online-desktop.svg);
+    width: 35rem;
+    height: 35rem;
+    margin-top: 1rem;
+    margin-left: -10rem;
+  }
+  .illustration-box {
+    background-image: url(images/illustration-box-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15rem;
+    height: 15rem;
+    margin-top: -25rem;
+    margin-left: -15rem;
+  }
+  .illustration-sombra {
+    background-image: url(images/bg-pattern-desktop.svg);
+    width: 35rem;
+    height: 35rem;
+    margin-top: -30rem;
+    margin-left: -10rem;
+  }
+}
+
+.accordion-container {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  clear: both;
+}
+.accordion-container:last-of-type {
+  border: none;
+}
+@media (min-width: 992px) {
+  .accordion-container {
+    margin-bottom: 2rem;
+  }
+}
+
+.accordion-titulo {
+  color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.accordion-titulo.open {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+.accordion-titulo:hover {
+  color: var(--soft-red);
+}
+.accordion-content {
+  display: none;
+  padding: 20px;
+  overflow: auto;
+}
+.accordion-content p {
+  color: var(--dark-grayish-blue);
+}
